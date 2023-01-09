@@ -1,8 +1,7 @@
 from pprint import pprint
 import requests
 import time
-
-tok = 'BQD2-O12AFpImAKmnZ6QrZKdISAOK_Bj46oihovfZII4VGNs2-poPVpSi1jxNK5UNvnkOFwbXpGZCXTfhh80jbC4P3zo_sXHmZlp_JBh8timo5q_3QEkiuYoAXlkqdo-Tuu_t92wp2ZN9zOuHVIDDokfgHORdakgdeTbZWv6AEPWu7SEbyG4Oe7t9EMp8p544pOR3vjZCB8'
+tok = '' #place token in here
 def get_current_track(token):
     '''gets the track info based on the users token'''
     response = requests.get('https://api.spotify.com/v1/me/player', headers = {"Authorization":f"Bearer {token}"})
