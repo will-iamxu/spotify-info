@@ -21,11 +21,11 @@ def read_credentials(file_name):
             credentials[key] = value
     return credentials
 
-credentials = read_credentials("client.txt")
+credentials = read_credentials("client.txt") #if you dont want it named client.txt for the credentials feel free to change it
 
 client_id = credentials["client_id"]
 client_secret = credentials["client_secret"]
-redirect_uri = "http://localhost:8080/callback"
+redirect_uri = "http://localhost:8080/callback" #change maybe
 scope = "user-read-playback-state"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scope))
 
@@ -34,7 +34,7 @@ class SpotifyCurrentSongApp(QWidget):
         super().__init__()
 
         self.setWindowTitle("Spotify Current Song")
-        self.setStyleSheet("QWidget { background-color: #2c2c2c; } QLabel { color: #ffffff; }")
+        self.setStyleSheet("QWidget { background-color: #2c2c2c; } QLabel { color: #ffffff; }") #change color
 
         self.song_info_label = QLabel("", self)
         self.song_info_label.setFont(QFont("Segoe UI", 14))
@@ -47,7 +47,7 @@ class SpotifyCurrentSongApp(QWidget):
         self.progress_bar = QProgressBar(self)
         self.progress_bar.setTextVisible(False)
         self.progress_bar.setRange(0, 100000)
-        self.progress_bar.setStyleSheet("QProgressBar { background-color: #3C3C3C; border: 1px solid #000000; } QProgressBar::chunk { background-color: #00FF00; }")
+        self.progress_bar.setStyleSheet("QProgressBar { background-color: #3C3C3C; border: 1px solid #000000; } QProgressBar::chunk { background-color: #00FF00; }") 
         
         self.elapsed_time_label = QLabel("", self)
         self.elapsed_time_label.setFont(QFont("Segoe UI", 12))
